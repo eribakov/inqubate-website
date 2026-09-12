@@ -56,14 +56,6 @@ export default function Home() {
           animation-play-state: paused;
         }
 
-        .event-marquee-wrap:hover .event-marquee {
-          animation-play-state: paused;
-        }
-
-        .event-marquee {
-          animation: scroll-left 32s linear infinite;
-        }
-
         @keyframes scroll-left {
           0% {
             transform: translateX(0);

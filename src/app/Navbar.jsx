@@ -9,17 +9,6 @@ const tabs = [
   { label: "Ventures", href: "/ventures" },
 ];
 
-const DiscordIcon = () => (
-  <svg
-    className="h-5 w-5 flex-shrink-0"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.211.375-.444.864-.607 1.25a18.27 18.27 0 0 0-5.487 0c-.163-.386-.395-.875-.607-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.975 14.975 0 0 0 1.293-2.1a.07.07 0 0 0-.038-.098a13.11 13.11 0 0 1-1.872-.892a.072.072 0 0 1-.007-.12a10.15 10.15 0 0 0 .372-.294a.07.07 0 0 1 .073-.01c3.928 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .074.009c.12.098.246.198.373.295a.072.072 0 0 1-.006.119a12.901 12.901 0 0 1-1.873.892a.07.07 0 0 0-.037.099a14.85 14.85 0 0 0 1.293 2.1a.07.07 0 0 0 .084.028a19.862 19.862 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.057c.5-4.565-.838-8.628-3.549-12.987a.06.06 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-.965-2.157-2.156c0-1.193.93-2.157 2.157-2.157c1.226 0 2.157.964 2.157 2.157c0 1.19-.93 2.155-2.157 2.155zm7.975 0c-1.183 0-2.157-.965-2.157-2.156c0-1.193.93-2.157 2.157-2.157c1.226 0 2.157.964 2.157 2.157c0 1.19-.931 2.155-2.157 2.155z" />
-  </svg>
-);
-
 const InstagramIcon = () => (
   <svg
     className="h-5 w-5 flex-shrink-0"
@@ -74,15 +63,6 @@ export default function Navbar() {
               className="rounded-full p-2 transition text-white/85 hover:bg-white/10 hover:text-white inline-flex items-center"
             >
               <InstagramIcon />
-            </Link>
-          </li>
-          <li className="flex items-center ml-1">
-            <Link
-              href="#"
-              aria-label="Discord"
-              className="rounded-full p-2 transition text-white/85 hover:bg-white/10 hover:text-white inline-flex items-center"
-            >
-              <DiscordIcon />
             </Link>
           </li>
         </ul>

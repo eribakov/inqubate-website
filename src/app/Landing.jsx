@@ -92,32 +92,6 @@ export default function Landing() {
       {/* Main content */}
       <div className="relative z-[2] min-h-[680px] mx-auto w-[min(1280px,92%)] pt-22 sm:pt-24 md:pt-26 lg:pt-30">
         <div className="animate-fade-in" style={{ maxWidth: "540px" }}>
-          {/* Status badge */}
-          <div
-            className="mb-5 inline-flex items-center gap-2 px-4 py-2"
-            style={{
-              background: "rgba(232,64,87,0.12)",
-              border: "1px solid rgba(232,64,87,0.25)",
-              borderRadius: "100px",
-              backdropFilter: "blur(12px)",
-            }}
-          >
-            <span
-              className="inline-block h-2 w-2 rounded-full bg-[#e84057] animate-pulse-dot"
-            />
-            <span
-              style={{
-                fontSize: "11px",
-                fontWeight: 700,
-                letterSpacing: "0.1em",
-                textTransform: "uppercase",
-                color: "rgba(255,255,255,0.85)",
-              }}
-            >
-              Applications Open for 2026
-            </span>
-          </div>
-
           {/* Headline */}
           <h1
             style={{
@@ -163,11 +137,9 @@ export default function Landing() {
           {/* CTA buttons */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <a
-              href="https://linktr.ee/inQUbate"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:inqubate.qu@gmail.com"
               className="hero-cta-primary group inline-flex items-center gap-2 transition-all duration-200 hover:-translate-y-0.5"
-              aria-label="Innovate with us (opens Linktree in a new tab)"
+              aria-label="Innovate with us (opens an email to inQUbate)"
             >
               Innovate With Us
               <svg

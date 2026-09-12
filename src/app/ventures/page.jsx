@@ -8,93 +8,64 @@ import Footer from "../Footer";
 // DATA — all venture content lives here; edit this section, not the JSX below
 // ─────────────────────────────────────────────────────────────────────────────
 
-const featuredVenture = {
-  name: "Paperboy",
-  tags: ["Audio", "Productivity"],
-  description:
-    "A mobile app that transforms your daily newsletters into a single, personalized audio briefing you can listen to on the go.",
-  stats: ["In Development"],
-  founders: ["Sarah Chen", "David Kim"],
-  thumbnail: "/placeholder-phone.png",
-  logo: "/placeholder-logo.png",
-  ctaLabel: "Learn More",
-  ctaHref: "/ventures/paperboy",
-};
-
 const currentVentures = [
   {
-    name: "Orbit",
-    tags: ["Campus", "Matching"],
+    name: "Paperboy",
     description:
-      "A centralized digital platform to modernize lost and found. Users can upload lost or found items with location data or drop them at the nearest partnered hub, and a matching algorithm connects them to the most likely results, eliminating the need to search blindly across campus.",
-    founders: ["Aisha Patel", "Jordan Lee"],
-    stage: "Web Platform",
-    thumbnail: "/placeholder-web.png",
-    logo: "/placeholder-logo.png",
-    imageRight: true,
-    ctaLabel: "View Venture",
-    ctaHref: "/ventures/orbit",
-  },
-  {
-    name: "Pantri",
-    tags: ["Food", "Budgeting"],
-    description:
-      "A meal-generation app that creates recipes from commonly-used ingredients students already have to help them reduce food waste and stay within a recurring grocery budget.",
-    founders: ["Emma Rodriguez", "Tyler Chen"],
+      "A mobile app that transforms your daily newsletters into a single, personalized audio briefing you can listen to on the go.",
     stage: "Mobile App",
     thumbnail: "/placeholder-phone.png",
     logo: "/placeholder-logo.png",
+    imageRight: true,
+  },
+  {
+    name: "Orbit",
+    description:
+      "A centralized digital platform to modernize lost and found. Users can upload lost or found items with location data or drop them at the nearest partnered hub, and a matching algorithm connects them to the most likely results, eliminating the need to search blindly across campus.",
+    stage: "Web Platform",
+    thumbnail: "/placeholder-web.png",
+    logo: "/placeholder-logo.png",
     imageRight: false,
-    ctaLabel: "View Venture",
-    ctaHref: "/ventures/pantri",
+  },
+  {
+    name: "Pantri",
+    description:
+      "A meal-generation app that creates recipes from commonly-used ingredients students already have to help them reduce food waste and stay within a recurring grocery budget.",
+    stage: "Mobile App",
+    thumbnail: "/placeholder-phone.png",
+    logo: "/placeholder-logo.png",
+    imageRight: true,
   },
   {
     name: "KDC Management",
-    tags: ["Operations", "Scheduling"],
     description:
       "A part-time worker management system to help managers in workflow management and ease of scheduling to increase productivity and employee retention.",
-    founders: ["Alex Johnson", "Maria Garcia"],
     stage: "Management Platform",
     thumbnail: "/placeholder-web.png",
     logo: "/placeholder-logo.png",
-    imageRight: true,
-    ctaLabel: "View Venture",
-    ctaHref: "/ventures/kdc-management",
+    imageRight: false,
   },
 ];
 
 const pastVentures = [
   {
     name: "ClassMate",
-    tags: ["EdTech"],
     description:
       "Note-sharing platform for university students. Acquired by a larger EdTech company in 2024. Served over 5,000 students across three universities.",
-    status: "Acquired",
-    statusStyle: "text-emerald-400 border-emerald-400/30 bg-emerald-400/10",
     thumbnail: "/placeholder-browser.png",
     logo: "/placeholder-logo.png",
-    // ctaLabel: "Visit",
-    // ctaHref: "https://classmate.com",
   },
   {
     name: "SkillSwap",
-    tags: ["Marketplace"],
     description:
       "Marketplace for students to trade skills and services. Pivoted to professional networking and absorbed into LinkedIn's campus program.",
-    status: "Pivoted",
-    statusStyle: "text-amber-400 border-amber-400/30 bg-amber-400/10",
     thumbnail: "/placeholder-browser.png",
     logo: "/placeholder-logo.png",
-    // ctaLabel: "Visit",
-    // ctaHref: "https://skillswap.com",
   },
   {
     name: "LocalEats",
-    tags: ["Foodtech"],
     description:
       "Restaurant discovery app focused on student budgets and dietary preferences. Successfully operated for two years before founders graduated.",
-    status: "Alumni",
-    statusStyle: "text-sky-400 border-sky-400/30 bg-sky-400/10",
     thumbnail: "/placeholder-browser.png",
     logo: "/placeholder-logo.png",
   },
@@ -116,35 +87,6 @@ const companyLogos = [
 // PRESENTATIONAL COMPONENTS
 // ─────────────────────────────────────────────────────────────────────────────
 
-function Tag({ label }) {
-  return (
-    <span className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-white/70">
-      {label}
-    </span>
-  );
-}
-
-function FounderAvatars({ founders, size = "sm", label = "" }) {
-  const dim = size === "md" ? "h-8 w-8" : "h-7 w-7";
-  return (
-    <div className="flex items-center gap-3">
-      <div className="flex -space-x-2">
-        {founders.map((name, i) => (
-          <img
-            key={i}
-            src="/placeholder-portrait.png"
-            alt={name}
-            className={`${dim} rounded-full border border-white/20 object-cover`}
-          />
-        ))}
-      </div>
-      <p className="text-sm text-white/40">
-        {label ? `${label} ${founders.join(", ")}` : founders.join(", ")}
-      </p>
-    </div>
-  );
-}
-
 function PastVentureCard({ venture }) {
   const inner = (
     <div className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm transition-all duration-300 hover:scale-[1.03] hover:border-white/20 hover:shadow-[0_0_30px_rgba(255,255,255,0.04)]">
@@ -155,9 +97,6 @@ function PastVentureCard({ venture }) {
           alt={venture.name}
           className="h-full w-full object-cover opacity-50 transition-all duration-500 group-hover:scale-105 group-hover:opacity-70"
         />
-        <span className={`absolute right-3 top-3 rounded-full border px-3 py-1 text-xs font-semibold ${venture.statusStyle}`}>
-          {venture.status}
-        </span>
       </div>
 
       {/* Body */}
@@ -169,14 +108,6 @@ function PastVentureCard({ venture }) {
             className="h-8 w-8 rounded-lg object-cover"
           />
           <h3 className="text-lg font-semibold">{venture.name}</h3>
-        </div>
-
-        <div className="mb-3 flex flex-wrap gap-1.5">
-          {venture.tags.map((t) => (
-            <span key={t} className="rounded-full bg-white/[0.07] px-2.5 py-0.5 text-xs text-white/55">
-              {t}
-            </span>
-          ))}
         </div>
 
         <p className="flex-1 text-sm leading-relaxed text-white/50">
@@ -297,71 +228,6 @@ export default function VenturesPage() {
         </Reveal>
       </section>
 
-      {/* Featured Venture */}
-      <section className="relative z-10 mx-auto w-[min(1280px,92%)] py-10">
-        <Reveal>
-        <div className="group relative overflow-hidden rounded-3xl border border-white/15 bg-white/5 backdrop-blur-md transition-all duration-500 hover:border-white/25 hover:bg-white/[0.07]">
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            {/* Text */}
-            <div className="relative z-10 flex flex-col justify-center p-10 md:p-14">
-              <div className="flex flex-wrap gap-2">
-                {featuredVenture.tags.map((t) => <Tag key={t} label={t} />)}
-              </div>
-
-              <h2 className="mt-5 text-5xl font-bold tracking-tight">
-                {featuredVenture.name}
-              </h2>
-              <p className="mt-5 text-lg leading-relaxed text-white/60">
-                {featuredVenture.description}
-              </p>
-
-              <div className="mt-7 flex flex-wrap gap-2">
-                {featuredVenture.stats.map((s) => (
-                  <span
-                    key={s}
-                    className="rounded-full border border-white/15 bg-white/[0.07] px-4 py-1.5 text-sm font-medium text-white/65"
-                  >
-                    {s}
-                  </span>
-                ))}
-              </div>
-
-              <div className="mt-8">
-                <FounderAvatars
-                  founders={featuredVenture.founders}
-                  size="md"
-                  label="By"
-                />
-              </div>
-
-              {featuredVenture.ctaHref && (
-                <div className="mt-9">
-                  <a
-                    href={featuredVenture.ctaHref}
-                    className="inline-block rounded-full bg-white px-7 py-3 text-sm font-semibold text-black transition-all duration-200 hover:scale-105 hover:bg-white/90 active:scale-100"
-                  >
-                    {featuredVenture.ctaLabel ?? "Learn More"}
-                  </a>
-                </div>
-              )}
-            </div>
-
-            {/* Thumbnail */}
-            <div className="relative flex min-h-[340px] items-center justify-center overflow-hidden p-8 md:p-10">
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-l from-transparent to-black/10" />
-              <img
-                src={featuredVenture.thumbnail}
-                alt={featuredVenture.name}
-                className="relative z-10 max-h-[380px] w-auto object-contain drop-shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-[1.04]"
-              />
-            </div>
-          </div>
-        </div>
-        </Reveal>
-      </section>
-
       {/* Current Ventures (alternating) */}
       <section className="relative z-10 mx-auto w-[min(1280px,92%)] space-y-8 py-10">
         <Reveal>
@@ -378,27 +244,10 @@ export default function VenturesPage() {
           >
             {/* Text */}
             <div className="flex-1">
-              <div className="flex flex-wrap gap-2">
-                {venture.tags.map((t) => <Tag key={t} label={t} />)}
-              </div>
-
-              <h3 className="mt-4 text-3xl font-bold">{venture.name}</h3>
+              <h3 className="text-3xl font-bold">{venture.name}</h3>
               <p className="mt-4 leading-relaxed text-white/55">
                 {venture.description}
               </p>
-
-              <div className="mt-6">
-                <FounderAvatars founders={venture.founders} />
-              </div>
-
-              {venture.ctaHref && (
-                <a
-                  href={venture.ctaHref}
-                  className="mt-7 inline-block rounded-full border border-white/20 bg-white/[0.07] px-5 py-2 text-sm font-medium text-white/75 transition-all duration-200 hover:border-white/35 hover:bg-white/15"
-                >
-                  {venture.ctaLabel ?? "View Venture"} →
-                </a>
-              )}
             </div>
 
             {/* Thumbnail */}
