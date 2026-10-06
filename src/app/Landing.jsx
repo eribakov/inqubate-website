@@ -164,6 +164,28 @@ export default function Landing() {
             >
               View Ventures
             </a>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSdFh8lg-VZjDa9Qb8lybrFaqvmEULSH8ifg9Tsk_cgDzl89HA/viewform?usp=dialog"
+              className="hero-cta-primary group inline-flex items-center gap-2 transition-all duration-200 hover:-translate-y-0.5"
+              aria-label="Apply as a founder (opens inqubate applicaton link)"
+            >
+              Apply as a founder
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                className="transition-transform duration-200 group-hover:translate-x-0.5"
+              >
+                <path
+                  d="M3 8h10m0 0L9 4m4 4L9 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
           </div>
 
           {/* Stats strip */}
